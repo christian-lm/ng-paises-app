@@ -23,8 +23,8 @@ export class PorPaisComponent {
     // Llamada al servicio de busqueda de paises
     this.paisService.buscarPais(this.termino)
       .subscribe(
-        response => {
-          console.log(response);
+        paises => {
+          console.log(paises);
         },
         error => {
           this.hayError = true;
