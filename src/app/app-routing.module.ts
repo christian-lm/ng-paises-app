@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '', // ruta vacia -> localhost:9090/
     component: PorPaisComponent,
-    pathMatch: 'full' // En cualquier caso ve a este componente
+    pathMatch: 'full' // Se muestra esta pagina solo si el path es igual
   },
   {
     path: 'region', // ruta region -> localhost:9090/region
