@@ -20,6 +20,9 @@ export class PaisService {
     const url = `${this.apiURL}/name/${query}`;
 
     return this.http.get(url);
+    /*.pipe( // El pipe es para lanzar operadores RXJS
+      catchError(err => of ([])) // OF genera observables
+    );*/
   }
 
 }

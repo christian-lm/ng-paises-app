@@ -11,13 +11,24 @@ export class PorPaisComponent {
   }
 
   termino: string = '';
+  hayError: boolean = false;
 
+  /**
+   * Metodo que llama al servicio de buscar paises
+   */
   buscar() {
+    this.hayError = false;
     console.log(this.termino);
 
+    // Llamada al servicio de busqueda de paises
     this.paisService.buscarPais(this.termino)
-      .subscribe(response => {
-        console.log(response);
-      });
+      .subscribe(
+        response => {
+          console.log(response);
+        },
+        error => {
+          this.hayError = true;
+          console.log(error);
+        });
   }
 }
