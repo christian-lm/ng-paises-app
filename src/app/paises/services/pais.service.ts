@@ -14,7 +14,7 @@ export class PaisService {
   }
 
   /**
-   * Metodo para la busqueda de pais por nombre Pais
+   * Metodo para la busqueda de paises por nombre Pais
    * @param query
    */
   buscarPais(query: string): Observable<Pais[]> {
@@ -28,12 +28,20 @@ export class PaisService {
   }
 
   /**
-   * Metodo para la busqueda de pais por capital
+   * Metodo para la busqueda de paises por capital
    * @param query
    */
   buscarPorCapital(query: string): Observable<Pais[]> {
     const url = `${this.apiURL}/capital/${query}`;
 
+    return this.http.get<Pais[]>(url);
+  }
+
+  /**
+   * Metodo para la busqueda de pais por codigo
+   */
+  buscarPaisPorCode(query: string): Observable<Pais[]> {
+    const url = `${this.apiURL}/alpha/${query}`;
     return this.http.get<Pais[]>(url);
   }
 
