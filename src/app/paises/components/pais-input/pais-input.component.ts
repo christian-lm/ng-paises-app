@@ -1,16 +1,17 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-pais-input',
-  templateUrl: './pais-input.component.html',
-  styleUrls: ['./pais-input.component.css']
+  templateUrl: './pais-input.component.html'
 })
 export class PaisInputComponent {
 
+  @Output() onEnter: EventEmitter<string> = new EventEmitter<string>();
   termino: string = '';
 
   buscar() {
-
+    this.onEnter.emit(this.termino);
+    console.log(this.termino);
   }
 
 }

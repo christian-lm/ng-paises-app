@@ -18,9 +18,9 @@ export class PorPaisComponent {
   /**
    * Metodo que llama al servicio de buscar paises
    */
-  buscar() {
+  buscar(termino: string) {
     this.hayError = false;
-    console.log(this.termino);
+    this.termino = termino;
 
     // Llamada al servicio de busqueda de paises
     this.paisService.buscarPais(this.termino)
