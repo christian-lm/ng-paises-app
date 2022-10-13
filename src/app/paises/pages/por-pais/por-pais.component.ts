@@ -14,6 +14,7 @@ export class PorPaisComponent {
   termino: string = '';
   hayError: boolean = false;
   paises: Pais[] = [];
+  placeholder: string = 'Buscar país...';
 
   /**
    * Metodo que llama al servicio de buscar paises
